@@ -36,9 +36,35 @@ body {
     font-family: 'pop';
 }
 
+.start-animate {
+    animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.stop-animate {
+    transform: translateX(0) !important;
+    -webkit-text-security: none !important;
+}
+
 /* style =========================================================================================== */
 .about {
+    
+}
 
+.about p {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-security: disc;
+    transform: translateX(-50rem);
+    /* animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28); */
+}
+
+.about p:nth-child(7) {
+    animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.about p:nth-child(6) {
+    margin-left: .5rem !important;
 }
 
 /* fonts =========================================================================================== */

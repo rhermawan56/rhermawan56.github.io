@@ -7,3 +7,42 @@ body {
     overflow-x: hidden;
     background-color: whitesmoke;
 }
+
+
+/* bootstrap hack ================================================================================== */
+.my-body .container {
+    max-width: unset;
+    width: 100%;
+}
+
+/* define style ==================================================================================== */
+.cek {
+    border: 1px solid;
+}
+
+.p-fixed {
+    position: fixed;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.pop {
+    font-family: 'pop';
+}
+
+/* style =========================================================================================== */
+.about {
+
+}
+
+/* fonts =========================================================================================== */
+@font-face {
+    font-family: 'pop';
+    src: url('../fonts/poppins-bold-webfont.woff2');
+}

@@ -36,6 +36,14 @@ body {
     font-family: 'pop';
 }
 
+.mon {
+    font-family: 'mon';
+}
+
+.mon-bold {
+    font-family: 'mon-bold';
+}
+
 .start-animate {
     animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
@@ -43,32 +51,148 @@ body {
 .stop-animate {
     transform: translateX(0) !important;
     -webkit-text-security: none !important;
+    -webkit-text-stroke-color: rgb(0 0 0 / 50%) !important;
 }
+
+.hide-scale {
+    transform: scale(0);
+}
+
+.show-scale {
+    transform: scale(1) !important;
+}
+
 
 /* style =========================================================================================== */
-.about {
-    
+
+/* about - me ====================================================================================== */
+.about {}
+
+.about .contain {
+    transform: scale(0);
+    transition: .5s ease;
 }
 
-.about p {
+.about .text p,
+.result .text p {
     color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     -webkit-text-security: disc;
     transform: translateX(-50rem);
-    /* animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28); */
 }
 
-.about p:nth-child(7) {
+.about .text p:nth-child(7) {
     animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.about p:nth-child(6) {
+.about .text p:nth-child(6),
+.result .text p:nth-child(3) {
     margin-left: .5rem !important;
 }
+
+.about .image img {
+    margin-left: 50%;
+}
+
+.about .image .img-bg {
+    top: 0;
+    left: 50%;
+    background-color: #15c38e;
+    z-index: -1;
+}
+
+.about .image img,
+.about .image .img-bg {
+    width: 15rem;
+    height: 15rem;
+}
+
+.about .image .img-bg-2 {
+    width: 17rem;
+    height: 17rem;
+    top: -1rem;
+    left: 50%;
+    background-color: rgb(0 0 0 / 10%);
+    z-index: -2;
+}
+
+.about .image img,
+.about .image .img-bg,
+.about .image .img-bg-2 {
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.about .image .img-bg-left {
+    left: 29%;
+    transform: translateX(-29%);
+    z-index: -3;
+}
+
+.about .image .img-bg-right {
+    right: 29%;
+    transform: translateX(29%);
+    z-index: -3;
+}
+
+.about .image .img-bg-left,
+.about .image .img-bg-right {
+    width: 12rem;
+    height: 12rem;
+    background-color: rgb(0 0 0 / 5%);
+    border-radius: 50%;
+    bottom: 0;
+}
+
+.result .contain {
+    transition: 1s ease;
+}
+
+.result .image img {
+    width: 20rem;
+    top: 0;
+}
+
+.result .image img:nth-child(1) {
+    left: 50%;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.result .image img:nth-child(2) {
+    left: 30%;
+    transform: translateX(-30%);
+    z-index: -1;
+}
+
+.result .image img:nth-child(3) {
+    right: 30%;
+    transform: translateX(30%);
+    z-index: -1;
+}
+
+.result .image img:nth-child(4) {
+    opacity: 0;
+}
+
+.result .link-image span {
+    font-size: 2rem; 
+    color: cornflowerblue;
+}
+
 
 /* fonts =========================================================================================== */
 @font-face {
     font-family: 'pop';
     src: url('../fonts/poppins-bold-webfont.woff2');
+}
+
+@font-face {
+    font-family: 'mon-bold';
+    src: url('../fonts/montserrat-bold-webfont.woff');
+}
+
+@font-face {
+    font-family: 'mon';
+    src: url('../fonts/montserrat-regular-webfont.woff');
 }

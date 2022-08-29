@@ -118,6 +118,9 @@ $('.tMode span').click(function () {
         $('.result .text p').toggleClass('title-dark')
         $('.skills .text p').toggleClass('title-dark')
         $('.about .content-text p').toggleClass('font-dark')
+        $('.skills .contain').toggleClass('font-dark')
+        $('.about .image .img-bg').toggleClass('img-dark')
+        $('.about .image .img-bg-2').toggleClass('img-dark-2')
     } else {
         $(this).toggleClass('size')
         $($('.tMode span')[0]).toggleClass('size')
@@ -126,6 +129,9 @@ $('.tMode span').click(function () {
         $('.result .text p').toggleClass('title-dark')
         $('.skills .text p').toggleClass('title-dark')
         $('.about .content-text p').toggleClass('font-dark')
+        $('.skills .contain').toggleClass('font-dark')
+        $('.about .image .img-bg').toggleClass('img-dark')
+        $('.about .image .img-bg-2').toggleClass('img-dark-2')
     }
 })
 

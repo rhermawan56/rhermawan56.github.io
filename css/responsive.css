@@ -2,7 +2,16 @@
 
 @media (max-width: 992px) {}
 
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+    .skills .icon {
+        background-color: unset !important;
+        justify-content: center;
+    }
+
+    .skills .icon p {
+        display: none;
+    }
+}
 
 @media (max-width: 576px) {
 
@@ -25,4 +34,6 @@
     .result .image img {
         width: 10rem;
     }
+
+    
 }

@@ -1,3 +1,4 @@
+// dark mode =======================================================================================
 function about_text() {
     let about_p = $('.about .text p')
     let index = about_p.length - 1
@@ -12,7 +13,7 @@ function about_text() {
             $('.about .contain').css('transform', 'scale(1)')
             $('.result').css('transform', 'scale(1)')
         }
-    }, 1000);
+    }, 500);
 }
 
 function aboutBg() {
@@ -63,26 +64,68 @@ function aboutBg() {
     }
 }
 
+let result_p = $('.result .text p')
 function myResult() {
-    let result_p = $('.result .text p')
-    let index = result_p.length
+    $('.result .contain').addClass('show-scale')
+    $('.result hr').addClass('show-scale')
+}
+
+let skills_p = $('.skills .text p')
+function skills() {
+    $('.skills .contain').addClass('show-scale')
+    $('.skills hr').addClass('show-scale')
+}
+
+function myAnimate(obj, fun) {
+    let index = obj.length
     let p = setInterval(() => {
-        $(result_p[index]).addClass('stop-animate')
-        $(result_p[index - 1]).addClass('start-animate')
+        $(obj[index]).addClass('stop-animate')
+        $(obj[index - 1]).addClass('start-animate')
         index--
         if (index == -1) {
             clearInterval(p)
-            $('.result .contain').addClass('show-scale')
-            $('.result hr').addClass('show-scale')
+            if (fun == 'result') {
+                myResult()
+            }
+            if (fun == 'skills') {
+                skills()
+            }
         }
-    }, 1000);
+    }, 500);
 }
 
 $(window).scroll(function () {
-    let check = $('.result .contain').hasClass('show-scale')
+    let check_result = $('.result .contain').hasClass('show-scale')
+    let check_skills = $('.skills .contain').hasClass('show-scale')
     let height = $(window).scrollTop()
-    if (height > 50 && check != true) {
-        myResult()
+    console.log(height)
+    if (height > 50 && check_result != true) {
+        myAnimate(result_p, 'result')
+    }
+    if (height > 300 && check_skills != true) {
+        myAnimate(skills_p, 'skills')
+    }
+})
+
+$('.tMode span').click(function () {
+    let check_mode = $(this).index()
+    console.log(check_mode)
+    if (check_mode == 0) {
+        $(this).toggleClass('size')
+        $($('.tMode span')[1]).toggleClass('size')
+        $('body').toggleClass('dark')
+        $('.about .text p').toggleClass('title-dark')
+        $('.result .text p').toggleClass('title-dark')
+        $('.skills .text p').toggleClass('title-dark')
+        $('.about .content-text p').toggleClass('font-dark')
+    } else {
+        $(this).toggleClass('size')
+        $($('.tMode span')[0]).toggleClass('size')
+        $('body').toggleClass('dark')
+        $('.about .text p').toggleClass('title-dark')
+        $('.result .text p').toggleClass('title-dark')
+        $('.skills .text p').toggleClass('title-dark')
+        $('.about .content-text p').toggleClass('font-dark')
     }
 })
 
@@ -91,5 +134,7 @@ $(function () {
     about_text()
     
     aboutBg()
+
+    
 
 })

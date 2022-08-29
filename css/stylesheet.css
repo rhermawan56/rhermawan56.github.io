@@ -6,13 +6,40 @@ body {
     width: 100%;
     overflow-x: hidden;
     background-color: whitesmoke;
+    transition: .5s ease;
 }
 
+.tMode span {
+    cursor: pointer;
+    bottom: 5rem;
+    right: 2rem;
+    transition: .5s ease;
+    color: cornflowerblue;
+}
+
+.tMode .size {
+    font-size: 0;
+}
 
 /* bootstrap hack ================================================================================== */
 .my-body .container {
     max-width: unset;
     width: 100%;
+}
+
+
+/* dark style ====================================================================================== */
+
+.dark {
+    background-color: #161618 !important;
+}
+
+.title-dark {
+    -webkit-text-stroke-color: rgb(100 149 237 / 50%) !important;
+}
+
+.font-dark {
+    color: cornflowerblue !important;
 }
 
 /* define style ==================================================================================== */
@@ -45,13 +72,13 @@ body {
 }
 
 .start-animate {
-    animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation: about .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .stop-animate {
     transform: translateX(0) !important;
     -webkit-text-security: none !important;
-    -webkit-text-stroke-color: rgb(0 0 0 / 50%) !important;
+    opacity: 50%;
 }
 
 .hide-scale {
@@ -61,8 +88,6 @@ body {
 .show-scale {
     transform: scale(1) !important;
 }
-
-
 /* style =========================================================================================== */
 
 /* about - me ====================================================================================== */
@@ -74,16 +99,17 @@ body {
 }
 
 .about .text p,
-.result .text p {
+.result .text p,
+.skills .text p {
     color: transparent;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: rgb(0 0 0 / 50%);
     -webkit-text-security: disc;
     transform: translateX(-50rem);
 }
 
 .about .text p:nth-child(7) {
-    animation: about 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    animation: about .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 .about .text p:nth-child(6),
@@ -145,7 +171,8 @@ body {
     bottom: 0;
 }
 
-.result .contain {
+.result .contain,
+.skills .contain {
     transition: 1s ease;
 }
 
@@ -180,6 +207,24 @@ body {
     color: cornflowerblue;
 }
 
+.skills .icon {
+    background-color: rgb(0 0 0 / 3%);
+    border-radius: .5rem;
+}
+
+.skills .icon img {
+    width: 2rem;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(0 0 0 / 3%);
+    color: cornflowerblue;
+}
+
+footer a {
+    color: cornflowerblue;
+}
 
 /* fonts =========================================================================================== */
 @font-face {

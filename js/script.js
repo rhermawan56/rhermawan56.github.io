@@ -141,6 +141,7 @@ $(function () {
     
     aboutBg()
 
+    console.log($('.result .contain'))
     
 
 })
